@@ -41,3 +41,31 @@ int main(){
 
     return 0;
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Solution {
+public:
+    
+    int partition(vector<int>& nums,int s,int e){
+        int pivot = nums[e];
+        int i = s-1;
+        for(int j=s;j<e;j++){
+            if(nums[j]<pivot){
+                i++;
+                swap(nums[i],nums[j]);
+            }
+        }
+        swap(nums[i+1],nums[e]);
+        return i+1;
+    }
+    
+    void QS(vector<int>& nums,int s,int e){
+        if(s>=e) return;
+        int p = partition(nums,s,e);
+        QS(nums,s,p-1);
+        QS(nums,p+1,e);
+    }
+    vector<int> sortArray(vector<int>& nums) {
+        QS(nums, 0, nums.size()-1);
+        return nums;
+    }
+};
