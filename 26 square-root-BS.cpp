@@ -28,7 +28,7 @@ float square_root(int N,int P){
     }
     return ans;
 }
-
+//main method
 int main(){
 	int n,p;
 	cin>>n>>p;
