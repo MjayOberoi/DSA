@@ -3,7 +3,6 @@
 #include<algorithm>
 using namespace std;
 
-
 bool canPlaceBirds(int B,int N,vector<int> nests,int sep){
 
 	int birds = 1;
@@ -23,8 +22,6 @@ bool canPlaceBirds(int B,int N,vector<int> nests,int sep){
 	return false;
 
 }
-
-
 int main(){
 	int B = 3;
 	vector<int> nests{1,2,4,8,9};
