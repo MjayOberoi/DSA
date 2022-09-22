@@ -36,7 +36,6 @@ int main(){
 
 	while(s<=e){
 		int mid = (s+e)/2;
-
 		bool canPlace = canPlaceBirds(B,N,nests,mid);
 		if(canPlace){
 			ans = mid;
@@ -46,8 +45,6 @@ int main(){
 			e = mid - 1;
 		}
 	}
-
 	cout << ans <<endl;
-
 	return 0;
 }
