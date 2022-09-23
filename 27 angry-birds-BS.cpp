@@ -4,10 +4,8 @@
 using namespace std;
 
 bool canPlaceBirds(int B,int N,vector<int> nests,int sep){
-
 	int birds = 1;
 	int location = nests[0];
-
 	for(int i=1; i<=N-1; i++){
 		int current_location = nests[i];
 		if(current_location - location >= sep){
@@ -20,8 +18,8 @@ bool canPlaceBirds(int B,int N,vector<int> nests,int sep){
 		}
 	}
 	return false;
-
 }
+
 int main(){
 	int B = 3;
 	vector<int> nests{1,2,4,8,9};
