@@ -23,7 +23,6 @@ void generateBrackets(string output,int n,int open,int close,int i){
 
 
 int main(){
-
 	string output;
 	int n ;
 	cin>>n;
