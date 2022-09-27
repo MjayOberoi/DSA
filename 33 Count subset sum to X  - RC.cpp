@@ -9,9 +9,7 @@ int countSubsets(vector<int> arr,int n,int i,int X){
 
 	//base case
 	if(i==n){
-		if(X==0){
-			return 1;
-		}
+		if(X==0) return 1;
 		return 0;
 	}
 
@@ -28,5 +26,4 @@ int main(){
 	cout << countSubsets(arr,arr.size(),0,X)<<endl;
 
 	return 0;
-
 }
