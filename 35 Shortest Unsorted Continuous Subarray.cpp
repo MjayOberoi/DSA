@@ -1,9 +1,7 @@
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
-
         int ans = 0;  
-        
         // Two pointers
         int i = 0;
         int j = nums.size() - 1;
