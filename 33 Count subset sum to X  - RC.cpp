@@ -4,15 +4,12 @@
 #include<algorithm>
 using namespace std;
 
-
 int countSubsets(vector<int> arr,int n,int i,int X){
-
 	//base case
 	if(i==n){
 		if(X==0) return 1;
 		return 0;
 	}
-
 	//recusive case 
 	int inc  = countSubsets(arr,n,i+1,X - arr[i]);
 	int exc = countSubsets(arr,n,i+1,X);
