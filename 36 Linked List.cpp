@@ -32,11 +32,9 @@ void insertInMiddle(node* &head, int data, int pos){
 		for(int jump=1;jump<=pos-1;jump++){
 			temp = temp->next;
 		}
-
 		node * n = new node(data);
 		n->next = temp->next;
 		temp->next = n;
-
 	}
 }
 
