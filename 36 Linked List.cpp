@@ -27,7 +27,6 @@ void insertInMiddle(node* &head, int data, int pos){
 	if(pos==0){
 		insertAtHead(head,data);
 	}
-
 	else{
 		node * temp = head;
 		for(int jump=1;jump<=pos-1;jump++){
