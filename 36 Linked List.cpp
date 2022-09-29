@@ -108,7 +108,6 @@ node* merge(node *a, node* b){
 	if(b==NULL){
 		return a;
 	}
-
 	//rec case
 	node * c;
 
@@ -142,10 +141,8 @@ node* mergeSort(node * head){
 	if(head==NULL or head->next==NULL){
 		return head;
 	}
-
 	//rec case
 	node * mid = midPoint(head);
-
 	//Break at the mid
 	node * a = head;
 	node * b = mid->next;
@@ -157,7 +154,6 @@ node* mergeSort(node * head){
 
 	//Merge
 	return merge(a,b);
-
 }
 
 
