@@ -87,7 +87,6 @@ node* kReverse(node *head,int k){
 		temp = current->next;
 		//update the current
 		current->next = prev;
-
 		//prev and current
 		prev = current;
 		current = temp;
