@@ -67,7 +67,6 @@ void reverse(node *&head){
 		prev = current;
 		current = temp;
 	}
-
 	head = prev;
 	return;
 }
