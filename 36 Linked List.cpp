@@ -142,11 +142,12 @@ node* mergeSort(node * head){
 	}
 	//rec case
 	node * mid = midPoint(head);
+	
 	//Break at the mid
 	node * a = head;
 	node * b = mid->next;
 	mid->next = NULL;
-
+	
 	//Recursive Sort
 	a = mergeSort(a);
 	b = mergeSort(b);
