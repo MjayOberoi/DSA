@@ -55,10 +55,3 @@ int main() {
 	cout<< rotated_search(a,key) <<endl;
 	return 0;
 }
-
-
-
-
-
-
-
