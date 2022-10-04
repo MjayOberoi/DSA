@@ -13,6 +13,7 @@ public:
 };
 
 //----------Linked List-----------//
+
 void insertAtHead(node * &head,int data){
 	if(head==NULL){
 		head = new node(data);
