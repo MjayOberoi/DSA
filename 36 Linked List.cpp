@@ -11,6 +11,7 @@ public:
 		next = NULL;
 	}
 };
+
 //----------Linked List-----------//
 void insertAtHead(node * &head,int data){
 	if(head==NULL){
