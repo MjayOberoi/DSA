@@ -1,17 +1,26 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
-
-         // initially profit is zero, n is the length of the array of prices.
-        int profit = 0, n = prices.size();
-        // iterate over the array from index 1 to n-1
-        for (int i=1; i<n; ++i) {
-             //assume that we already brought the shares
-             // if price of today is greater than yesterday, then profit should be increased
-            if(prices[i] > prices[i-1])
-                 // increase the profit  by adding today's profit in profit
-                profit += prices[i]-prices[i-1];
+    int solve(int index, int flag, vector<int> &prices, int n, vector<vector<int>> &dp){
+        if(index==n) return 0;
+        if(dp[index][flag] != -1) return dp[index][flag];
+        int profit=0;
+        
+        if(flag==1){
+            profit = max(-prices[index]+solve(index+1,0,prices,n,dp),0+solve(index+1,1,prices,n,dp));
         }
-        return profit;
+        else{
+            profit = max(prices[index]+solve(index+1,1,prices,n,dp),0+solve(index+1,0,prices,n,dp));
+        }
+        return dp[index][flag]=profit;
+    }
+    
+    
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        
+        vector<vector<int>> dp (n, vector<int>(2,-1));
+        
+        return solve(0,1,prices,n, dp);
+            
     }
 };
