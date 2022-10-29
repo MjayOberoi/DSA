@@ -11,26 +11,19 @@ class Solution{
 public:
     vector<vector<string>> displayContacts(int n, string ct[], string s)
     {
-        map<string,int>mp;
-        for(int i=0;i<n;i++)
-        {
-            mp[ct[i]]++;
-        }
-        vector<vector<string>>ans;
-        for(int i=0;i<s.size();i++)
-        {
-            vector<string>v;
-            for(auto it:mp)
-            {
-                if(it.first.substr(0,i+1)==s.substr(0,i+1))
-                {
-                    v.push_back(it.first);
-                }
+        map <string, int> mp;
+        for(int i=0;i<n;i++) mp[ct[i]]++;
+        
+        vector<vector<string>> res;
+        for(int i=0;i<s.length();i++){
+            vector <string> temp;
+            for(auto it: mp){
+                if(it.first.substr(0,i+1)==s.substr(0,i+1)) temp.push_back(it.first);
             }
-            if(v.size()==0)v.push_back("0");
-            ans.push_back(v);
+            if(temp.size()==0) temp.push_back("0");
+            res.push_back(temp);
         }
-        return ans;
+        return res;
     }
 };
 
