@@ -12,8 +12,6 @@ class Solution
     public:
         int largestArea(int n,int m,int k,vector<vector<int>> &a)
         {
-            if(k==0) return n*m;
-
             unordered_set<int> x, y;
             for(int i=0; i<k; i++) {
                 x.insert(a[i][0]);
@@ -40,7 +38,7 @@ class Solution
             }
             c = max(temp, c);
             
-            return (r*c);
+            return k==0 ? (n*m) : (r*c);
         }
 };
 
