@@ -13,30 +13,35 @@ class Solution
         int largestArea(int n,int m,int k,vector<vector<int>> &a)
         {
             unordered_set<int> x, y;
+    //blocked values are geeting inserted
             for(int i=0; i<k; i++) {
                 x.insert(a[i][0]);
                 y.insert(a[i][1]);
             }
-        
-            int r = 0, c = 0, temp = 0;
+    //since m and n have different value hence needs 2 for loop
+            int r = 0, c = 0, count = 0;
             for(int i=1; i<=n; i++) {
-                if(x.find(i) == x.end()) temp++;
+            // the value is not in set means that it is not blocked
+                if(x.find(i) == x.end()) count++;
                 else {
-                    r = max(temp, r);
-                    temp = 0;
+            //finding the maximum unblocked length 
+                    r = max(count, r);
+            //setting the count to again 0 as now the current value is in set implying that it is blocked
+                    count = 0;
                 }
             }
-            r = max(temp, r);
+    //taking the max value of count again bcz what if last value is not in set then it will not go in else block
+            r = max(count, r);
         
-            temp = 0;
+            count = 0;
             for(int i=1; i<=m; i++) {
-                if(y.find(i) == y.end()) temp++;
+                if(y.find(i) == y.end()) count++;
                 else {
-                    c = max(temp, c);
-                    temp = 0;
+                    c = max(count, c);
+                    count = 0;
                 }
             }
-            c = max(temp, c);
+            c = max(count, c);
             
             return k==0 ? (n*m) : (r*c);
         }
