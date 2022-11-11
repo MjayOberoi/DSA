@@ -7,16 +7,15 @@ using namespace std;
 // User function Template for C++
 class Solution {
 public:
-     bool checkPrime(int n){
-        for(int i=2; i<=sqrt(n); i++){
-            if(n%i == 0 )    return 0;
-        }
-        return 1;
+    bool isPrime(int n){
+        for(int i=2; i<=sqrt(n);i++) if(n%i==0) return false;
+        return true;
     }
 
     string isSumOfTwo(int N){
-        for(int i=2; i<N/2+1; i++){
-            if(checkPrime(N-i) && checkPrime(i))    return "Yes";
+        // code here
+        for(int i=2;i<=N/2;i++){
+            if(isPrime(N-i) and isPrime(i)) return "Yes";
         }
         return "No";
     }
