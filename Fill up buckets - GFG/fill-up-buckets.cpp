@@ -17,7 +17,7 @@ public:
         for(int i = 0 ; i < n ; i++){
             res = ((res)*((capacity[i]-i)))%1000000007;
         }
-        return res;
+        return (int)res;
     }
 };
 
